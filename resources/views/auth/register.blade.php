@@ -39,7 +39,7 @@
                     </label>
                     <input 
                         id="username"
-                        name="name"
+                        name="username"
                         type="text"
                         placeholder="Tu Nombre de Usuario"
                         class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
@@ -75,7 +75,6 @@
                         type="password"
                         placeholder="Password de Registro"
                         class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror"
-                        value="{{ old('password') }}"
                     />
                     @error('password')
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">La contraseña es obligatorio</p>
