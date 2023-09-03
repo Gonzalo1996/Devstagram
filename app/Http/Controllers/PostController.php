@@ -8,6 +8,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        dd('Desde PostController');
+        // dd(auth()->user());
+        return view('dashboard');
     }
 }
