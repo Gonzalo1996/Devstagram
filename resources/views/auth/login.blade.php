@@ -53,6 +53,10 @@
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">La contraseña es obligatorio</p>
                     @enderror
                 </div>
+                <div class="mb-5">
+                    <input type="checkbox" name="remember" id="remember"> 
+                    <label class="text-gray-500 text-sm" for="">Mantener sesión abierta</label>
+                </div>
                 <input 
                     type="submit" 
                     value="Iniciar Sesión"

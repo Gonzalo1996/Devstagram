@@ -13,11 +13,33 @@
           <h1 class="text-3xl font-black">
             @yield('title')
           </h1>
+          <!--
+          @if(auth()->user())
+            <p>Autentificado</p>
+          @else
+            <p>No Autentificado</p>
+          @endif
+          -->
 
+          @auth
           <nav>
-            <a class="font-bold uppercase text-gray-600 text-sm"href="#">Login</a>
-            <a class="font-bold uppercase text-gray-600 text-sm"href="{{ route('register') }}">Crear Cuenta</a>
+            <a class="font-bold uppercase text-gray-600 text-sm"href="#">
+              Hola: 
+              <span class="font-normal">{{ auth()->user()->username }}</span>
+            </a>
+            <form action="{{ route('logout') }}" method="POST">
+              @csrf
+              <button type="submit" class="font-bold uppercase text-gray-600 text-sm">Cerrar Sesión</button>
+            </form>
           </nav>
+          @endauth
+          @guest
+            <nav>
+              <a class="font-bold uppercase text-gray-600 text-sm"href="#">Login</a>
+              <a class="font-bold uppercase text-gray-600 text-sm"href="{{ route('register') }}">Crear Cuenta</a>
+            </nav>
+          @endguest
+
         </div>
       </header>
 
