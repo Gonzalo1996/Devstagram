@@ -18,7 +18,7 @@ class RegisterController extends Controller
 
         //Modificar el Request
         $request->request->add([
-            'username' => Str::slug($request->username)
+            'username' => Str::slug($request->username) //Str::slug convierte todo en minuscula tipo url.
         ]);
 
         //Request y Validaciones
