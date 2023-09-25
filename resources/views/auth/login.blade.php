@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title-nav')
-    Registro
+    Login
 @endsection
 @section('title')
     Devstegram

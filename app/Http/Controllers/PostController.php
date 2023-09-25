@@ -15,4 +15,10 @@ class PostController extends Controller
     {
         return view('dashboard');
     }
+
+    public function create()
+    {
+        return view('posts.create');
+        // return redirect()->route('posts.create');
+    }
 }
