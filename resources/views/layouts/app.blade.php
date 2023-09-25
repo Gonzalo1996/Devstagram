@@ -31,7 +31,7 @@
               </svg>              
               Crear
             </a>
-            <a class="font-bold uppercase text-gray-600 text-sm"href="#">
+            <a class="font-bold uppercase text-gray-600 text-sm" href="{{ route('posts.index')}} ">
               Hola: 
               <span class="font-normal">{{ auth()->user()->username }}</span>
             </a>
