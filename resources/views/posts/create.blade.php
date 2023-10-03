@@ -22,38 +22,47 @@
         </div>
 
         <div class="md:w-1/2 bg-white p-10 rounded-lg shadow-xl mt-10 md:mt-0">
-            <form action="{{ route('register') }}" method="POST" novalidate>
+            <form action="{{ route('posts.store') }}" method="POST" novalidate>
                 @csrf
                 <div class="mb-5">
-                    <label for="titulo" class="mb-2 block uppercase text-gray-500 font-bold">
+                    <label for="title" class="mb-2 block uppercase text-gray-500 font-bold">
                         Titulo
                     </label>
                     <input 
-                        id="titulo"
-                        name="titulo"
+                        id="title"
+                        name="title"
                         type="text"
                         placeholder="Titulo de la Publicación"
                         class="border p-3 w-full rounded-lg @error('titulo') border-red-500 @enderror"
-                        value="{{ old('titulo') }}"
+                        value="{{ old('title') }}"
                     />
-                    @error('titulo')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">El nombre es obligatorio</p>
+                    @error('title')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">El titulo es obligatorio</p>
                     @enderror
                 </div>
                 <div class="mb-5">
-                    <label for="descripcion" class="mb-2 block uppercase text-gray-500 font-bold">
+                    <label for="description" class="mb-2 block uppercase text-gray-500 font-bold">
                         Descripción
                     </label>
                     <textarea 
-                        id="descripcion"
-                        name="descripcion"
+                        id="description"
+                        name="description"
                         placeholder="Descripción de la Publicación"
                         class="border p-3 w-full rounded-lg @error('descripcion') border-red-500 @enderror"
                     >
-                    {{ old('titulo') }}
+                    {{ old('description') }}
                     </textarea>
-                    @error('titulo')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">El nombre es obligatorio</p>
+                    @error('description')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">La descripción es obligatorio</p>
+                    @enderror
+                </div>
+                <div class="mb-5">
+                    <input 
+                        name="image"
+                        type="hidden"
+                    />
+                    @error('image')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">El campo imagen es obligatorio</p>
                     @enderror
                 </div>
                 <input 

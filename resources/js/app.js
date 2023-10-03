@@ -17,7 +17,7 @@ dropzone.on('sending', function(file, xhr, formData) {
 });
 
 dropzone.on('success', function(file, response) {
-    console.log(response);
+    document.querySelector('[name="image"]').value = response.imagen; 
 });
 
 dropzone.on('error', function(file, message) {
