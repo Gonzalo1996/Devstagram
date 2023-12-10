@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -12,8 +13,10 @@ class PostController extends Controller
         $this->middleware('auth');
     }
     
-    public function index()
+    public function index(User $user)
     {
+        $posts = Post::where('user_id', $user->id)->get();
+        dd($user->id);
         return view('dashboard');
     }
 
